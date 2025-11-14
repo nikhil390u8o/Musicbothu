@@ -1,5 +1,13 @@
-downloads/
-cookies/
+# .gitignore
 __pycache__/
 *.pyc
-config.py  # If sensitive—use env vars instead
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+downloads/
+cookies/
+config.py  # If sensitive—load via env vars
+.DS_Store
