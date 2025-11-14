@@ -1,6 +1,6 @@
 Pyrogram==2.0.106
 TgCrypto
-py-tgcalls               # latest stable = 2.2.8
-youtube-search-python    # correct name, latest = 1.6.6
+py-tgcalls
+youtube-search-python
 yt-dlp
 aiohttp
