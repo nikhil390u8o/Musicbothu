@@ -1,8 +1,10 @@
 # config.py
-API_ID = 12345678
-API_HASH = "your_api_hash"
-BOT_TOKEN = "your:bot_token"
-SESSION_NAME = "musicbot"
-API_KEY = "xbYml37389QsJnEFKEPS"
-API_URL = "https://deadlinetech.site"
-DURATION_LIMIT = 1800  # 30 minutes
+import os
+
+API_ID = int(os.getenv("API_ID"))
+API_HASH = os.getenv("API_HASH")
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+SESSION_NAME = os.getenv("SESSION_NAME", "musicbot")
+API_KEY = os.getenv("API_KEY")
+API_URL = os.getenv("API_URL")
+DURATION_LIMIT = int(os.getenv("DURATION_LIMIT", "1800"))minutes
