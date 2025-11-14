@@ -15,10 +15,10 @@ RUN apt-get update && apt-get install -y \
 # Copy requirements first (for layer caching)
 COPY requirements.txt .
 
-# Upgrade pip and install in virtualenv (suppresses root warning)
+# Upgrade pip and install in virtualenv (with trusted host for reliability)
 RUN python -m venv /opt/venv && \
     /opt/venv/bin/pip install --upgrade pip && \
-    /opt/venv/bin/pip install --no-cache-dir -r requirements.txt
+    /opt/venv/bin/pip install --no-cache-dir --trusted-host pypi.org -r requirements.txt
 
 # Copy source code
 COPY . .
