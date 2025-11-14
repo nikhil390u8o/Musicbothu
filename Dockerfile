@@ -4,7 +4,7 @@ FROM python:3.11-slim
 # Set working directory
 WORKDIR /app
 
-# Install system dependencies (ffmpeg for audio streaming)
+# Install system dependencies (ffmpeg for streaming)
 RUN apt-get update && apt-get install -y \
     ffmpeg \
     opus-tools \
@@ -12,20 +12,22 @@ RUN apt-get update && apt-get install -y \
     libopus0 \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy requirements first (for Docker layer caching)
+# Copy requirements first (for layer caching)
 COPY requirements.txt .
 
-# Upgrade pip first, then install (fixes the "new release available" notice)
-RUN pip install --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt
+# Upgrade pip and install in virtualenv (suppresses root warning)
+RUN python -m venv /opt/venv && \
+    /opt/venv/bin/pip install --upgrade pip && \
+    /opt/venv/bin/pip install --no-cache-dir -r requirements.txt
 
 # Copy source code
 COPY . .
 
-# Create dirs
+# Create persistent dirs
 RUN mkdir -p downloads/audio downloads/video cookies
 
-# Env for unbuffered output (better logs)
+# Activate virtualenv and set env
+ENV PATH="/opt/venv/bin:$PATH"
 ENV PYTHONUNBUFFERED=1
 
 # Run bot
