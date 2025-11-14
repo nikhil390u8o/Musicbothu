@@ -27,3 +27,4 @@ RUN mkdir -p downloads/audio downloads/video cookies
 ENV PYTHONUNBUFFERED=1
 
 CMD ["python", "main.py"]
+CMD ["python", "debug.py"]
