@@ -1,6 +1,6 @@
 Pyrogram==2.0.106
 TgCrypto
-py-tgcalls  # ← Fixed: Unpinned to install latest (2.2.8)
+py-tgcalls
+youtube-search-python  # ← Fixed: Correct package name (installs 1.6.6)
 yt-dlp
-youtubesearchpython
 aiohttp
