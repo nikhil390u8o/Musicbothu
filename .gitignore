@@ -1,0 +1,5 @@
+downloads/
+cookies/
+__pycache__/
+*.pyc
+config.py  # If sensitive—use env vars instead
