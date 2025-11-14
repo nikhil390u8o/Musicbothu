@@ -1,0 +1,19 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  musicbot:
+    build: .
+    container_name: telegram-music-bot
+    restart: unless-stopped
+    volumes:
+      - ./downloads:/app/downloads
+      - ./cookies:/app/cookies
+      - ./config.py:/app/config.py:ro
+    environment:
+      - PYTHONUNBUFFERED=1
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
