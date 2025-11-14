@@ -1,6 +1,6 @@
 Pyrogram==2.0.106
 TgCrypto
-py-tgcalls
-youtube-search-python  # ← Confirmed correct: Installs 1.6.6, supports VideosSearch
+py-tgcalls               # latest stable = 2.2.8
+youtube-search-python    # correct name, latest = 1.6.6
 yt-dlp
 aiohttp
