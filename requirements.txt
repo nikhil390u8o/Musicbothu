@@ -1,6 +1,6 @@
 Pyrogram==2.0.106
 TgCrypto
-py-tgcalls[pyrogram]==3.1.1  # ← Fixed: Use py-tgcalls instead
+py-tgcalls  # ← Fixed: Unpinned to install latest (2.2.8)
 yt-dlp
 youtubesearchpython
 aiohttp
