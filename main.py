@@ -117,5 +117,5 @@ async def start(_, m):
 if __name__ == "__main__":
     app.start()
     pytgcalls.start()
-    print("Bot started!")
-    app.idle()  # ← Use idle() for long-running
+    print("Bot started and running forever!")  # Yeh log me dikhega
+    app.idle()  # Yeh line bot ko alive rakhegi – MUST!  # ← Use idle() for long-running
